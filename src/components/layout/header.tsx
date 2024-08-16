@@ -8,11 +8,12 @@ const Header: React.FC = () => {
 
 	return (
 		<div className="flex w-full h-14 items-center justify-between p-1 border-b border-black">
-			<div className="flex h-full w-1/6">
+			<div className="flex h-full w-1/3 md:w-1/6 items-center">
 				<Link to="/">
 					<img className={"object-contain"} src={reslogo} />
 				</Link>
 			</div>
+
 			<div>
 				{cookie.userInfo?.user ?
 					<div className="flex justify-center items-center h-full px-2">{cookie.userInfo.user}</div>

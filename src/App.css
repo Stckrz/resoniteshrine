@@ -1,16 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 #root {
-  max-width: 1280px;
-  /* margin: 0 auto; */
-  /* padding: 2rem; */
-  /* text-align: center; */
+	max-width: 1280px;
+	/* margin: 0 auto; */
+	/* padding: 2rem; */
+	/* text-align: center; */
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+	a:nth-of-type(2) .logo {
+		animation: logo-spin infinite 20s linear;
+	}
 }
 
+
+.ez-input {
+	@apply p-1 rounded;
+}
+.ez-button {
+	@apply w-1/4 py-1 px-2 self-end border border-gray-700;
+}
