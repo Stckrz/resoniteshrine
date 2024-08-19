@@ -11,6 +11,7 @@ import {
 	postSectionImage
 } from '../../../library/api/articleapi/articleApi';
 import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
 
 interface ArticleCreationConfirmProps {
 	setConfirmModalShown: React.Dispatch<SetStateAction<boolean>>,
@@ -26,6 +27,7 @@ const ArticleCreationConfirm: React.FC<ArticleCreationConfirmProps> = ({
 	}) => {
 
 	const [cookie] = useCookies(['userInfo']);
+	const navigate = useNavigate();
 	const [errorMessages, setErrorMessages] = useState<string[]>([""]);
 	const [articleObject] = useState({
 		id: 0,
@@ -34,7 +36,7 @@ const ArticleCreationConfirm: React.FC<ArticleCreationConfirmProps> = ({
 		summary: articleInfo.summary,
 		sections: sections
 	});
-	console.log("ass",articleInfo.articleType)
+
 	const errorMessageHandler = (errorObject: object) => {
 		setErrorMessages([])
 		const temp = [];
@@ -66,8 +68,8 @@ const ArticleCreationConfirm: React.FC<ArticleCreationConfirmProps> = ({
 				if (sectionData) {
 					fetchSectionImagePost(data.id, sectionData)
 				}
-				console.log(sectionData)
 			}
+			navigate('/')
 		} else {
 			errorMessageHandler(data)
 		}
@@ -82,7 +84,7 @@ const ArticleCreationConfirm: React.FC<ArticleCreationConfirmProps> = ({
 			</button>
 			<Article article={articleObject} sectionImages={sectionImages} />
 			<button
-				className="w-1/6 py-1 px-2 self-end border border-gray-700"
+				className="md:w-1/6 m-2 p-2 flex items-center justify-center md:py-1 md:px-2 self-end border border-gray-700"
 				onClick={() => { fetchPostArticle() }}>
 				Confirm
 			</button>

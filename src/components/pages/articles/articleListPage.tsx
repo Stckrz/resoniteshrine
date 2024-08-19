@@ -12,7 +12,7 @@ const ArticleListPage: React.FC = () => {
 					<div className="flex self-end p-2">Create</div>
 				</Link>
 			}
-			<ArticleList />
+			<ArticleList articleListType='article'/>
 		</div>
 	)
 }

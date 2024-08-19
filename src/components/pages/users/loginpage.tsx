@@ -30,7 +30,7 @@ const LoginPage: React.FC = () => {
 				<div>
 					Password:
 				</div>
-				<input type={passwordInput} className="p-1 rounded" onChange={e => setPasswordInput(e.target.value)} />
+				<input type="password" className="p-1 rounded" onChange={e => setPasswordInput(e.target.value)} />
 				<button onClick={() => { fetchUserLogin() }} className="ez-button">Login</button>
 			</div>
 			<div>

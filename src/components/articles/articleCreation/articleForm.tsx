@@ -1,5 +1,6 @@
 import React, { useState, SetStateAction } from 'react';
 import { ArticleModel } from '../../../models/articleModels';
+import ImageForm from './imageForm';
 
 interface ArticleFormProps {
 	articleInfo: ArticleModel,
@@ -7,8 +8,9 @@ interface ArticleFormProps {
 }
 const ArticleForm: React.FC<ArticleFormProps> = ({ articleInfo, setArticleInfo }) => {
 	const [title, setTitle] = useState("")
-	const [articleType, setArticleType] = useState("Article")
+	const [articleType, setArticleType] = useState("article")
 	const [summary, setSummary] = useState("")
+	const [mainImage, setMainImage] = useState<string[]>([])
 	const [formShown, setFormShown] = useState(true);
 	const [errorMessages, setErrorMessages] = useState<string[]>([]);
 
@@ -37,11 +39,11 @@ const ArticleForm: React.FC<ArticleFormProps> = ({ articleInfo, setArticleInfo }
 			title: title,
 			articleType: articleType,
 			summary: summary,
+			mainImage: mainImage[0]
 		})
 		setFormShown(false)
 
 	}
-console.log(articleType)
 	return (
 		formShown
 			? <div className="flex gap-2 flex-col justify-between w-11/12 md:w-2/3 border p-2">Article Info:
@@ -63,6 +65,7 @@ console.log(articleType)
 					value={summary}
 					onChange={e => setSummary(e.target.value)}
 				/>
+					<ImageForm images={mainImage} setImages={setMainImage}/>
 				<div className="flex justify-between">
 					<div>
 						{errorMessages.length > 0 &&

@@ -14,7 +14,9 @@ const SideBar: React.FC<SideBarProps> = ({setHamburgerShown}) => {
 					<Link to="articleList/1">
 						<div className="flex items-center w-full p-2 hover:bg-gray-700 cursor-pointer">Articles</div>
 					</Link>
+					<Link to="tutorialList/1">
 					<div className="flex items-center w-full p-2 hover:bg-gray-700 cursor-pointer">Tutorials</div>
+					</Link>
 					<div className="flex items-center w-full p-2 hover:bg-gray-700 cursor-pointer">Gallery</div>
 				</div>
 			</div>
@@ -23,10 +25,12 @@ const SideBar: React.FC<SideBarProps> = ({setHamburgerShown}) => {
 		return (
 			<div className="absolute top-14 bottom-0 right-0 left-0 h-full w-full bg-gray-900">
 				<div className="flex flex-col w-full">
-					<Link onClick={()=>{setHamburgerShown(false)}} to="articleList">
+					<Link onClick={()=>{setHamburgerShown(false)}} to="articleList/1">
 						<div className="flex items-center w-full p-2 hover:bg-gray-700 cursor-pointer">Articles</div>
 					</Link>
+					<Link onClick={()=>{setHamburgerShown(false)}} to="tutorialList/1">
 					<div className="flex items-center w-full p-2 hover:bg-gray-700 cursor-pointer">Tutorials</div>
+					</Link>
 					<div className="flex items-center w-full p-2 hover:bg-gray-700 cursor-pointer">Gallery</div>
 				</div>
 			</div>

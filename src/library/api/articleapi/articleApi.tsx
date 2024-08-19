@@ -3,10 +3,8 @@ import { ArticleModel, ArticleSectionModel, PostImageModel } from "../../../mode
 const apiUrl = 'http://localhost:8000'
 
 export async function getArticles(page: number, articleType: string) {
-// export async function getArticles(pageUrl: string, articleType: string="article") {
 	try {
 		const result = await fetch(`${apiUrl}/api/articles/?page=${page}&articleType=${articleType}`)
-		// const result = await fetch(`${pageUrl}&articleType=${articleType}`)
 		const data = await result.json()
 		return data
 	}
@@ -30,7 +28,8 @@ export async function postArticle(token: string, articleObject: ArticleModel) {
 	const articlePostObject = {
 		title: articleObject.title,
 		articleType: articleObject.articleType,
-		summary: articleObject.summary
+		summary: articleObject.summary,
+		mainImage: articleObject.mainImage
 	}
 	try {
 		const result = await fetch(`${apiUrl}/api/articles/`, {

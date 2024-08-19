@@ -8,10 +8,7 @@ const ImageForm: React.FC<ImageFormProps> = ({images, setImages}) => {
 	const [imageUrl, setImageUrl] = useState("")
 
 	const imageAddHandler = () => {
-		console.log("images", images)
-		console.log("imageurl", imageUrl)
 		setImages([...images, imageUrl])
-		// setImageUrl("")
 	}
 	const imageRemoveHandler = (image: string) => {
 		setImages(images.filter(img => img !== image))

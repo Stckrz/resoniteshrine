@@ -29,6 +29,7 @@ export interface ArticleModel{
 	title: string,
 	articleType: string, 
 	summary: string,
+	mainImage: string,
 	created_at?: string,
 	sections: ArticleSectionModel[]
 }
@@ -46,6 +47,7 @@ export const ArticleModelDefault = {
 	title: "",
 	articleType: "",
 	summary: "",
+	mainImage: "",
 	created_at: "",
 	sections: []
 }

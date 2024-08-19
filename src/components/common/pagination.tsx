@@ -13,14 +13,14 @@ const Pagination: React.FC<PaginationProps> = ({ pageInformation, page }) => {
 		<div className="flex w-full justify-between">
 			<div>
 				{pageInformation.previous &&
-					<div onClick={() => { navigate(`/articleList/${page - 1}`) }}>prev</div>
+					<div className="cursor-pointer" onClick={() => { navigate(`/articleList/${page - 1}`) }}>prev</div>
 				}
 				{pageInformation.next &&
-					<div onClick={() => { navigate(`/articleList/${page + 1}`) }}>next</div>
+					<div className="cursor-pointer" onClick={() => { navigate(`/articleList/${page + 1}`) }}>next</div>
 				}
 			</div>
 			<div>
-				{pageInformation.count}
+				results: {pageInformation.count}
 			</div>
 		</div>
 	)

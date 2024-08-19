@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 		<div className="flex w-full h-14 items-center justify-between p-1 border-b border-black">
 			<div className="flex h-full w-1/3 md:w-1/6 items-center">
 				<Link to="/">
-					<img className={"object-contain"} src={reslogo} />
+					<img className={"object-contain max-w-32 min-w-32"} src={reslogo} />
 				</Link>
 			</div>
 
