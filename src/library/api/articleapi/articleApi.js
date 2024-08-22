@@ -1,4 +1,5 @@
-const apiUrl = 'http://localhost:8000';
+// const apiUrl = 'http://localhost:8000';
+const apiUrl = 'https://eager.slimyan.us'
 export async function getArticles(page, articleType) {
     try {
         const result = await fetch(`${apiUrl}/api/articles/?page=${page}&articleType=${articleType}`);

@@ -1,4 +1,5 @@
-const apiUrl = 'http://localhost:8000';
+// const apiUrl = 'http://localhost:8000';
+const apiUrl = 'https://eager.slimyan.us'
 export async function userLogin(username, password) {
     const userCredentialsObject = {
         username: username,
