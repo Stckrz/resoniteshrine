@@ -12,10 +12,5 @@ export default defineConfig({
 		postcss: {
 			plugins: [tailwindcss()]
 		},
-	},
-	resolve: {
-		alias: {
-			'@components': path.resolve(__dirname, 'src/components')
-		}
-	},
+	}
 });
