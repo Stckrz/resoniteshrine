@@ -1,6 +1,7 @@
 import { ArticleModel, ArticleSectionModel, PostImageModel } from "../../../models/articleModels"
 
-const apiUrl = 'http://localhost:8000'
+// const apiUrl = 'http://localhost:8000'
+const apiUrl = 'https://eager.slimyan.us'
 
 export async function getArticles(page: number, articleType: string) {
 	try {
