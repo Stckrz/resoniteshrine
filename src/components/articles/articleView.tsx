@@ -36,7 +36,7 @@ const Article: React.FC<ArticleProps> = ({ article, sectionImages }) => {
 							{section.images?.length > 0 &&
 								section.images.map((image) => {
 									return (
-										<div className="md:w-1/2 w-dvw md:my-4" key={image.id}>
+										<div className="md:w-1/2 w-dvw md:my-2" key={image.id}>
 											<img className="object-fit" src={image.image_url} />
 										</div>
 									)
@@ -46,16 +46,16 @@ const Article: React.FC<ArticleProps> = ({ article, sectionImages }) => {
 								sectionImages.map((image, index) => {
 									return (
 										image.sectionTitle === section.section_title &&
-										<div className="md:w-1/2 w-dvw md:my-4" key={index}>
+										<div className="md:w-1/2 w-dvw md:my-2" key={index}>
 											<img className="object-fit" src={image.image_url} />
 										</div>
 									)
 								})
 							}
-							<h2 className="text-2xl my-4 p-4">
+							<h2 className="text-2xl my-2 p-2">
 								{section.section_title}
 							</h2>
-							<p className="my-2 p-4">
+							<p className="my-2 p-2">
 								{section.section_content}
 							</p>
 						</div>

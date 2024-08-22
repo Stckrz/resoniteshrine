@@ -14,6 +14,10 @@ export interface PostImageModel{
 	image_url: string
 }
 
+export interface GalleryImage{
+	image_url: string
+}
+
 export interface PageInformationModel{
 	count: number,
 	next: number,

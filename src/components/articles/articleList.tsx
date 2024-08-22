@@ -37,20 +37,22 @@ const ArticleList: React.FC<ArticleListParams> = ({ articleListType }) => {
 	useEffect(() => {
 		setPage(pageParam ? parseInt(pageParam) : 1)
 	}, [pageParam])
-	console.log(articles)
+
 	return (
 		<div className="p-2">
 			<div className="text-2xl">{articleListType === 'article' ? "Articles" : "Tutorials"}</div>
 			{
 				pageInformation &&
-				<Pagination pageInformation={pageInformation} page={page} />
+				<Pagination pageInformation={pageInformation} page={page} pageType={articleListType === 'article' ? 'articleList' : 'tutorialList'}/>
 			}
 			{articles.map((article: ArticleModel) => {
 				return (
 					<div className="flex border border-gray-500 rounded md:m-4 md:p-2 min-h-24" key={article.id}>
+							{article.mainImage &&
 						<div className='self-center h-1/2 w-1/2'>
 							<img className="object-contain" src={article.mainImage} />
 						</div>
+						}
 						<div className="flex flex-col w-full h-full m-2">
 							<div className="flex w-full justify-between border-b border-b-gray-400">
 								<Link to={`/articles/${article.id}`} key={article.id}>

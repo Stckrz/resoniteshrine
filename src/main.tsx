@@ -12,6 +12,7 @@ import ArticleListPage from './components/pages/articles/articleListPage.tsx';
 import TutorialListPage from './components/pages/articles/tutorialListPage.tsx';
 import ArticleViewPage from './components/pages/articles/articleViewPage.tsx';
 import NewArticlePage from './components/pages/articles/newArticle.tsx';
+import GalleryPage from './components/pages/gallery/galleryPage.tsx';
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')!).render(
 					<Route path="tutorialList/:page?" element={<TutorialListPage />} />
 					<Route path="articles/:id" element={<ArticleViewPage />} />
 					<Route path="articleCreate" element={<NewArticlePage />} />
+					<Route path="gallery/:page?" element={<GalleryPage />} />
 				</Route>
 			</Routes>
 		</Router>

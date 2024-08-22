@@ -87,3 +87,38 @@ export async function postSectionImage(token: string, imageObject: PostImageMode
 		console.log("an error occurred", error)
 	}
 }
+
+export async function getGalleryImages(page: number) {
+	try {
+		const result = await fetch(`${apiUrl}/api/galleryimages/?page=${page}`)
+		const data = await result.json()
+		if(data.results){
+		return data
+		}
+	}
+	catch (error) {
+		console.log("an error occurred", error)
+	}
+}
+
+export async function postGalleryImage(token: string, url: string){
+	const galleryImageObject = {
+		image_url: url
+	}
+	try{
+		const result = await fetch(`${apiUrl}/api/galleryimages/`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Token ${token}`
+			},
+			body: JSON.stringify(galleryImageObject)
+		})
+		const data = await result.json()
+		return data
+	}
+	catch (error){
+		console.log("an error occurred", error)
+	}
+}
+
