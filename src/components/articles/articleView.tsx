@@ -7,7 +7,7 @@ import {
 
 interface ArticleProps {
 	article: ArticleModel,
-	sectionImages: SectionImageModel[]
+	sectionImages?: SectionImageModel[]
 }
 const Article: React.FC<ArticleProps> = ({ article, sectionImages }) => {
 	const [sections, setSections] = useState<ArticleSectionModel[]>([])
@@ -42,7 +42,7 @@ const Article: React.FC<ArticleProps> = ({ article, sectionImages }) => {
 									)
 								})
 							}
-							{sectionImages?.length > 0 &&
+							{sectionImages && sectionImages?.length > 0 &&
 								sectionImages.map((image, index) => {
 									return (
 										image.sectionTitle === section.section_title &&

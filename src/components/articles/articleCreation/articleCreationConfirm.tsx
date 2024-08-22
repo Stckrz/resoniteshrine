@@ -34,6 +34,7 @@ const ArticleCreationConfirm: React.FC<ArticleCreationConfirmProps> = ({
 		title: articleInfo.title,
 		articleType: articleInfo.articleType,
 		summary: articleInfo.summary,
+		mainImage: articleInfo.mainImage,
 		sections: sections
 	});
 
