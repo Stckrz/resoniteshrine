@@ -5,7 +5,7 @@ import {
 	Routes, Route,
 } from "react-router-dom";
 import { HashRouter as Router } from "react-router-dom";
-import Home from './components/pages/home/home'
+import Home from './components/pages/home/home.tsx';
 import Layout from './components/layout/layout.tsx';
 import LoginPage from './components/pages/users/loginpage.tsx';
 import ArticleListPage from './components/pages/articles/articleListPage.tsx';
