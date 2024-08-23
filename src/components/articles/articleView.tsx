@@ -33,6 +33,9 @@ const Article: React.FC<ArticleProps> = ({ article, sectionImages }) => {
 				sections.map((section: ArticleSectionModel) => {
 					return (
 						<div className="md:my-4" key={section.id}>
+							<h2 className="text-2xl my-2 p-2">
+								{section.section_title}
+							</h2>
 							{section.images?.length > 0 &&
 								section.images.map((image) => {
 									return (
@@ -52,9 +55,6 @@ const Article: React.FC<ArticleProps> = ({ article, sectionImages }) => {
 									)
 								})
 							}
-							<h2 className="text-2xl my-2 p-2">
-								{section.section_title}
-							</h2>
 							<p className="my-2 p-2">
 								{section.section_content}
 							</p>
