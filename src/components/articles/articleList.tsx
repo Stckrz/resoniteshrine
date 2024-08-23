@@ -40,7 +40,7 @@ const ArticleList: React.FC<ArticleListParams> = ({ articleListType }) => {
 
 	return (
 		<div className="p-2">
-			<div className="text-2xl">{articleListType === 'article' ? "Articles" : "Tutorials"}</div>
+			<div className="text-2xl">{articleListType === 'article' ? "Articles" : "Tutorial"}</div>
 			{
 				pageInformation &&
 				<Pagination pageInformation={pageInformation} page={page} pageType={articleListType === 'article' ? 'articleList' : 'tutorialList'}/>
