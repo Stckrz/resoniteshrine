@@ -20,7 +20,7 @@ const ImageForm: React.FC<ImageFormProps> = ({images, setImages}) => {
 				<input
 					value={imageUrl}
 					onChange={e => setImageUrl(e.target.value)}
-					className={"ez-input"}
+					className={"ez-input "}
 				/>
 			<button className="ez-button" onClick={imageAddHandler}>addImage</button>
 			</div>
